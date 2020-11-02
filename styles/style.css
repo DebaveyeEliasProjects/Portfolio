@@ -1,0 +1,381 @@
+* {
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+@font-face{
+    font-family: "Bebas";
+    src: url("../fonts/BebasNeue-Regular.ttf");
+    font-weight: 400;
+}
+
+:root{
+
+    --global-white: #FFFCF9;
+    --global-dark:#6D6875;
+    --global-red:#E5989B;
+
+}
+html {
+    scroll-behavior: smooth;
+  }
+
+body{
+    background-color:var(--global-white) ;
+    font-family: "Bebas";
+    font-weight: 400;
+    color: var(--global-dark);
+    height: 100vh;
+    width: 100%;
+    padding-left: 42px;
+    padding-right: 42px;
+    padding-top: 16px;
+    transition: transform 0.1 ease;
+}
+
+.c-nav {
+    /* width: 100%; */
+    /* margin-top: 16px;
+    margin-left: 42px;
+    margin-right: 42px; */
+}
+
+.c-nav__top{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    
+}
+
+.c-navigation{
+    list-style: none;
+    font-size: 22px;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.c-navigation__item{
+    margin-left: 32px;
+}
+
+.c-navigation__item a{
+    text-decoration: none;
+    position: relative;
+    color: var(--global-dark);
+    transition: 0.2s ease;
+}
+
+.c-navigation__item a:hover{
+    color: var(--global-red);
+}
+
+.c-navigation__item a::after{
+    position: absolute;
+    content: '';
+    opacity: 0;
+    bottom: 2px;
+    left: -4px; right: -4px;
+    transition: 0.2s ease;
+    height: 2px;
+    background-color:  var(--global-red);
+}
+
+.c-navigation__item a:hover::after{
+    position: absolute;
+    content: '';
+    opacity: 1;
+    bottom: 0px;
+    left: 0; right: 0;
+    height: 2px;
+    background-color:  var(--global-red);
+}
+
+
+.c-logo{
+    font-size: 48px;
+}
+.c-nav__bottom{
+    margin-top: -10px;
+    font-size: 22px;
+    display: flex;
+    
+}
+.c-nav__bottom div {
+    border-top: 2px solid ;
+}
+
+.c-socials{
+    /* background-color: var(--global-dark); */
+    display: flex;
+    align-items: center;
+    width: 56px;
+    position: fixed;
+    /* justify-content: center; */
+    top: 0;
+    bottom: 0;
+    
+}
+
+.c-socials__holder{
+    /* height: 20%; */
+    display: grid;
+    grid-gap: 16px;
+}
+
+.c-socials__holder div:hover{
+    cursor: pointer;
+}
+
+
+.c-socials__holder div svg {
+   width: 20px;
+}
+
+.c-socials__holder div svg path{
+    transition: fill 0.1s ease;
+    /* pointer-events: none; */
+}
+
+.c-socials__holder div:hover svg path{
+    fill: var(--global-red);
+    cursor: pointer;
+}
+
+
+/* .test {
+    height: 120px;
+    background-color: yellow;
+} */
+
+
+.c-header{
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.c-header__logo{
+    background-color: var(--global-red);
+    width: 40%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--global-white);
+    font-size: 40px;
+    /* line-height:32px; */
+}
+
+.c-header__logo h1{
+    margin-top: 8px;
+}
+
+.c-content{
+    /* background-color: black; */
+    width: 100%;
+    /* height: 100%; */
+    margin-top: 64px;
+    padding-left: 62px;
+    padding-right: 62px;
+    display: flex;
+    justify-content: center;
+}
+
+.c-content__wrapper{
+    width: 85%;
+    margin: 0 auto;
+}
+
+.c-picture{
+    max-width: 230px;
+    transition:  0.5s ease !important;
+    box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+    margin-bottom: 16px !important;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--global-white);
+    
+}
+
+.c-picture:hover{
+    transform: scale(1.1) !important;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.c-picture img{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    max-width: 100%;
+}
+
+.c-picture p{
+    padding: 8px;
+    width: 230px;
+    word-break: break-all;
+    font-size: 18px;
+}
+
+.c-picture__viewer{
+    width: 100%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    background-color: #222222;
+    z-index: -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* hide fotos bij selecteren van 1tje */
+
+.c-picture__viewer h2{
+    margin-top: 32px;
+    color: var(--global-white);
+    word-break: break-all;
+    max-width: 400px;
+    font-size: 28px;
+}
+
+.c-picture__viewer img{
+    max-height: 80%;
+    max-width: 70%;
+    border-radius: 6px;
+}
+.c-picture__viewer img::selection{
+    background-color: transparent;
+}
+
+.c-viewer__close{
+    position: absolute;
+    z-index: 100;
+    top: 24px;
+    right: 24px;
+}
+
+.c-viewer__close:hover{
+    cursor: pointer;
+}
+
+.c-viewer__close svg{
+    height: 28px;
+    width: 28px;
+}
+
+.c-menu{
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+    background-color: var(--global-white);
+    margin: -16px;
+    padding-top: 32px;
+    transform: translateX(110%);
+    transition: transform 0.35s ease-in-out;
+    box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+    -moz-box-shadow: -1px 3px 49px -14px rgba(0,0,0,0.75);
+}
+
+
+.c-menu svg{
+  position: absolute;
+  right: 16px;  
+}
+
+.c-menu .c-navigation{
+    display: block;
+}
+
+.c-menu .c-navigation li{
+    display: block;
+    margin-bottom: 16px;
+}
+
+.u-menu-show{
+    transform: translateX(0);
+}
+
+@media(max-width: 1200px){
+
+    body{
+        padding: 16px 16px
+    }
+    .c-header__logo{
+        font-size: 22px;
+        height: 160px;
+        width: 60%;
+    }
+
+}
+
+p a {
+    /* text-decoration: none; */
+    color: var(--global-red);
+}
+
+
+.content{
+    transition: transform 0.35s ease-in-out;
+}
+
+.u-zoomout{
+    transform: scale(0.9);
+    
+
+}
+
+@media(min-width: 510px){
+
+    .c-nav__menu{
+        display: none;
+    }
+}
+
+@media(max-width: 510px){
+
+    body{
+        padding: 16px 16px
+    }
+    .c-header{
+        display: none;
+        
+    }
+    .c-nav__top div{
+        display: none;
+    }
+    .c-nav__menu{
+        display: block;
+        margin-top: -8px;
+    }
+    .c-nav__top{
+        align-items: center;
+    }
+    .c-logo{
+        font-size: 36px;
+        margin-bottom: 2px;
+    }
+    .c-nav__bottom div{
+        font-size: 18px;
+    }
+    .c-picture{
+        max-width: 120px;
+    }
+    .c-picture p{
+        max-width: 120px;
+        font-size: 15px;
+    }
+}
