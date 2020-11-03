@@ -1,14 +1,57 @@
+const data = [{
+    url: "./pictures/DSC01431.jpg",
+    text: "🏰 Disneyland 2020"
+},{
+    url: "./pictures/DSC01518.jpg",
+    text: "🏰 Disneyland 2020"
+},{
+    url: "./pictures/DSC01298.jpg",
+    text: "🏰 Disneyland 2020"
+},{
+    url: "./pictures/DSC02203.jpg",
+    text: "Mom made cake 🎂"
+},{
+    url: "./pictures/DSC02108.jpg",
+    text: "📸 Photoshoot - Hayo"
+},{
+    url: "./pictures/DSC02238.jpg",
+    text: "✨ Twinkel twinkle little star"
+},{
+    url: "./pictures/DSC01512.jpg",
+    text: "🏰 Disneyland 2020"
+},{
+    url: "./pictures/DSC02242.jpg",
+    text: "Orange skies"
+},{
+    url: "./pictures/DSC01894.jpg",
+    text: "📸 Photoshoot - Hayo"
+}]
+
+const loadImages = async function(data){
+
+    let html =document.querySelector(".c-content__wrapper").innerHTML;
+
+    document.querySelector(".c-content__wrapper").innerHTML += `<div class="c-picture" data-aos-once="true" data-aos="fade-down" >
+                <img async=on  data-src="${data.url}" src="${data.url}" class="lazyload" alt="">
+                <p>${data.text}</p>
+            </div>`;    
+    console.log(document.querySelectorAll(".c-picture").length)
+    if(document.querySelectorAll(".c-picture").length == data.length){
+        
+    }
+}
+
+
 const init = async function(){
-    // var grid = document.querySelector('.c-content__wrapper');
-    // // var grid = document.querySelector('.grid');
-    // var msnry = new Masonry( grid, {
-    // // options...
-    // itemSelector: '.c-picture',
-    // columnWidth: '.c-picture',
-    // gutter: 16,
-    // fitWidth: true,
-    // // percentPosition: true
-    // });
+    //await lazyload();
+    
+    data.forEach(element => {
+        console.log(element)
+         loadImages(element);
+    });
+    imagesLoaded( document.querySelector('.c-content__wrapper'), function( instance ) {
+        document.querySelector(".loader").style.display = "none";
+      });
     if(document.querySelector(".development")){
         console.log("zit daar")
         document.querySelectorAll(".c-picture").forEach(element => {

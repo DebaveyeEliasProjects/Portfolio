@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Linking external documents -->
-    <script src="./script/bundle.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-rc.2/lazyload.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/macy@2"></script>
-    <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.js"></script>
         <script src="./script/app.js"></script>
     <link rel="stylesheet" href="./styles/style.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
     <title>🦉ElieUiltjes</title>
 </head>
-
+<div class="loader">
+</div>
 <body>
+    
     <div class="c-picture__viewer" >
         <div class="c-viewer__close">
             <svg  xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21">
@@ -84,49 +84,50 @@
         </aside>
         <section class="c-content">
             <div class="c-content__wrapper"  data-aos="fade-down" data-aos-delay="200" data-aos-duration="700">
-                <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img class="lazyload" src="./pictures/DSC01431.jpg" alt="">
+                <!-- <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
+                    <img async=on loading="lazy" data-src="./pictures/DSC01431.jpg" src="./pictures/DSC01431.jpg" class="lazyload" alt="">
                     <p>🏰 Disneyland 2020</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img class="lazyload" src="./pictures/DSC01518.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC01518.jpg" src="./pictures/DSC01518.jpg" class="lazyload" alt="">
                     <p>🏰 Disneyland 2020</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC01298.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC01298.jpg"  src="./pictures/DSC01298.jpg" class="lazyload"  alt="">
                     <p>🏰 Disneyland 2020</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC02203.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC02203.jpg" src="./pictures/DSC02203.jpg" class="lazyload"  alt="">
                     <p>Mom made cake 🎂</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC02108.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC02108.jpg" src="./pictures/DSC02108.jpg" class="lazyload"  alt="">
                     <p>📸 Photoshoot - Hayo</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC02238.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC02238.jpg" src="./pictures/DSC02238.jpg" class="lazyload"  alt="">
                     <p>✨ Twinkel twinkle little star</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC01512.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC01512.jpg" src="./pictures/DSC01512.jpg" class="lazyload"  alt="">
                     <p>🏰Disneyland 2020</p>
                 </div>
                 <div class="c-picture" data-aos-once="true"  data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC02242.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC02242.jpg" src="./pictures/DSC02242.jpg" class="lazyload"  alt="">
                     <p>Orange skies</p>
                 </div>
                 <div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                    <img lass="lazyload" src="./pictures/DSC01894.jpg" alt="">
+                    <img async=on loading="lazy" data-src="./pictures/DSC01894.jpg" src="./pictures/DSC01894.jpg" class="lazyload"  alt="">
                     <p>📸 Photoshoot - Hayo</p>
-                </div>
+                </div> -->
             </div>
         </section>
     </div>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      AOS.init();
+    <script async>
+        AOS.init();
     </script>
+
 </body>
 </html>
