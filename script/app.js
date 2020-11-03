@@ -1,14 +1,14 @@
 const init = async function(){
-    var grid = document.querySelector('.c-content__wrapper');
-    // var grid = document.querySelector('.grid');
-    var msnry = new Masonry( grid, {
-    // options...
-    itemSelector: '.c-picture',
-    columnWidth: '.c-picture',
-    gutter: 16,
-    fitWidth: true,
-    // percentPosition: true
-    });
+    // var grid = document.querySelector('.c-content__wrapper');
+    // // var grid = document.querySelector('.grid');
+    // var msnry = new Masonry( grid, {
+    // // options...
+    // itemSelector: '.c-picture',
+    // columnWidth: '.c-picture',
+    // gutter: 16,
+    // fitWidth: true,
+    // // percentPosition: true
+    // });
     if(document.querySelector(".development")){
         console.log("zit daar")
         document.querySelectorAll(".c-picture").forEach(element => {
