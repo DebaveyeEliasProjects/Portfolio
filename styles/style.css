@@ -187,20 +187,11 @@ body{
 }
 
 .c-content__wrapper{
-    
-    /* margin-left: 28px; */
-    /* margin: 0 auto; */
+    padding-top: 36px;
     margin: 0 auto;
     width: min-content;
     columns: 5;
-    /* column-gap: 16px; */
-    /* height: fit-content; */
-    /* horizontal-align: middle; */
-        /* display:table-cell;  */
-    /* column-gap: 0px; */
-    column-fill: var(--global-dark);
-    /* column-width: 50%; */
-    /* display: flex; */
+    overflow: visible;
 }
 
 @media(max-width:1600px){
@@ -221,7 +212,6 @@ body{
 
     .c-content__wrapper{
         columns:2;
-        /* width: 100%; */
     }
 
 }
@@ -229,7 +219,6 @@ body{
 
     .c-content__wrapper{
         columns:1;
-        /* width: 100%; */
     }
 
 }
