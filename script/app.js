@@ -1,29 +1,38 @@
 const data = [{
-    url: "./pictures/DSC01431.jpg",
+    name: "DSC01431.jpg",
+    preview: "",
     text: "🏰 Disneyland 2020"
 },{
-    url: "./pictures/DSC01518.jpg",
+    name: "DSC01518.jpg",
+    preview: "",
     text: "🏰 Disneyland 2020"
 },{
-    url: "./pictures/DSC01298.jpg",
+    name: "DSC01298.jpg",
+    preview: "",
     text: "🏰 Disneyland 2020"
 },{
-    url: "./pictures/DSC02203.jpg",
+    name: "DSC02203.jpg",
+    preview: "",
     text: "Mom made cake 🎂"
 },{
-    url: "./pictures/DSC02108.jpg",
+    name: "DSC02108.jpg",
+    preview: "",
     text: "📸 Photoshoot - Hayo"
 },{
-    url: "./pictures/DSC02238.jpg",
-    text: "✨ Twinkel twinkle little star"
+    name: "DSC02238.jpg",
+    preview: "",
+    text: "✨ Twinkeletwinkle little star"
 },{
-    url: "./pictures/DSC01512.jpg",
+    name: "DSC01512.jpg",
+    preview: "",
     text: "🏰 Disneyland 2020"
 },{
-    url: "./pictures/DSC02242.jpg",
+    name: "DSC02242.jpg",
+    preview: "",
     text: "Orange skies"
 },{
-    url: "./pictures/DSC01894.jpg",
+    name: "DSC01894.jpg",
+    preview: "",
     text: "📸 Photoshoot - Hayo"
 }]
 
@@ -32,7 +41,7 @@ const loadImages = async function(data){
     let html =document.querySelector(".c-content__wrapper").innerHTML;
 
     document.querySelector(".c-content__wrapper").innerHTML += `<div class="c-picture" data-aos-once="true" data-aos="fade-down" >
-                <img async=on  data-src="${data.url}" src="${data.url}" class="lazyload" alt="">
+                <img async=on  data-src="./pictures/preview/${data.name}" src="./pictures/preview/${data.name}" class="lazyload" alt="">
                 <p>${data.text}</p>
             </div>`;    
     console.log(document.querySelectorAll(".c-picture").length)
@@ -44,14 +53,9 @@ const loadImages = async function(data){
 
 const init = async function(){
     //await lazyload();
+    let date = Date("2020-11-08T18:48:48+00:00");
+    console.log(date);
     
-    data.forEach(element => {
-        console.log(element)
-         loadImages(element);
-    });
-    imagesLoaded( document.querySelector('.c-content__wrapper'), function( instance ) {
-        document.querySelector(".loader").style.display = "none";
-      });
     if(document.querySelector(".development")){
         console.log("zit daar")
         document.querySelectorAll(".c-picture").forEach(element => {
@@ -65,6 +69,12 @@ const init = async function(){
         });
     }
     else{
+        data.forEach(element => {
+             loadImages(element);
+        });
+        imagesLoaded( document.querySelector('.c-content__wrapper'), function( instance ) {
+            document.querySelector(".loader").style.display = "none";
+          });
         console.log("zit hier")
         document.querySelectorAll(".c-picture").forEach(element => {
             element.addEventListener("click", function(){
@@ -72,7 +82,11 @@ const init = async function(){
                 let text = element.childNodes[3].childNodes[0].textContent;
                 console.log(text)
                 window.scrollTo(-100, 0); 
-                document.querySelector(".c-picture__viewer").childNodes[3].src =img;
+
+
+                document.querySelector(".c-picture__viewer").childNodes[3].src ="./pictures/high/"+img.split('/')[5];
+
+
                 document.querySelector(".c-picture__viewer").childNodes[5].textContent =text;
                 document.querySelector(".c-content").style.display = "none";
                 document.querySelector(".c-picture__viewer").style.zIndex = "100";
